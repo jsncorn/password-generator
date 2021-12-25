@@ -123,7 +123,7 @@ function promptUser() {
 }
 
 function pwdLength() {
-  valueLength = prompt("Password length");
+  valueLength = prompt("How long would you like the password?");
   if(valueLength < 8 || valueLength > 128) {
     alert("Password cannot be less than 8 characters and more than 128 characters.");
     pwdLength();
@@ -131,17 +131,17 @@ function pwdLength() {
 }
 
 function pwdLowercase() {
-  valueLowercase = confirm("Lowercase?");
+  valueLowercase = confirm("Would you like lowercase letters?");
 }
 
 function pwdUppercase() {
-  valueUppercase = confirm("Uppercase?");
+  valueUppercase = confirm("Would you like uppercase letters?");
 }
 
 function pwdNumeric() {
-  valueNumbers = confirm("Numbers?");
+  valueNumbers = confirm("Would you like numbers?");
 }
 
 function pwdSpecial() {
-  valueSpecial = confirm("Special chars?");
+  valueSpecial = confirm("Would you like special characters?");
 }
