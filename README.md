@@ -2,6 +2,8 @@
 
 This is a random password generator. It will prompt a user 5 times with the intent of asking for certain criterias, then creating a randomly generated string using the given criteria. 
 
+![Demo GIF](https://github.com/jsncorn/password-generator/blob/main/photos/demo.gif)
+
 ## Built With
 
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
