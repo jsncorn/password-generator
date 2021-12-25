@@ -7,7 +7,8 @@ var upperArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P
 var numArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var specArray = ['!@#$%^&*()'];
 var finalArray = [];
-var password = [];
+var passwordRaw = [];
+
 
 // Write password to the #password input
 function writePassword() {
@@ -27,7 +28,8 @@ function generatePassword() {
   checkCriteria();
   for (var i = 0; i < valueLength; i++) {
   var criteriaChoice = finalArray[Math.floor(Math.random() * finalArray.length)]
-  password.push(criteriaChoice);
+  passwordRaw.push(criteriaChoice);
+  password = passwordRaw.join('');
 }
 }
 
