@@ -6,6 +6,7 @@ var lowArray = ['abcdefghijklmnopqrstuvwxyz'];
 var upperArray = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
 var numArray = ['1234567890'];
 var specArray = ['!@#$%^&*()'];
+var finalArray = [''];
 
 // Write password to the #password input
 function writePassword() {
@@ -22,25 +23,44 @@ generateBtn.addEventListener("click", writePassword);
 //numeric, or special characters
 
 function generatePassword() {
+promptUser();
+checkCriteria();
+}
 
+function checkCriteria() {
+  if(valueLowercase && valueUppercase && valueNumbers && valueSpecial) {
+  const finalArray = finalArray.concat(lowArray, upperArray, numArray, specArray);
+  }
+  else if(!valueLowercase && valueUppercase && valueNumbers && valueSpecial){
+  const finalArray = lowArray.concat(upperArray, numArray, specArray);
+  }
+
+}
+
+function promptUser() {
+  pwdLength();
+  pwdLowercase();
+  pwdUppercase();
+  pwdNumeric();
+  pwdSpecial();
 }
 
 function pwdLength() {
-  prompt("Password length")
+  valueLength = prompt("Password length");
 }
 
 function pwdLowercase() {
-  confirm("Lowercase?")
+  valueLowercase = confirm("Lowercase?");
 }
 
 function pwdUppercase() {
-  confirm("Uppercase?")
+  valueUppercase = confirm("Uppercase?");
 }
 
 function pwdNumeric() {
-  confirm("Numbers?")
+  valueNumbers = confirm("Numbers?");
 }
 
 function pwdSpecial() {
-  confirm("Special chars?")
+  valueSpecial = confirm("Special chars?");
 }
