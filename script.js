@@ -6,7 +6,8 @@ var lowArray = ['abcdefghijklmnopqrstuvwxyz'];
 var upperArray = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
 var numArray = ['1234567890'];
 var specArray = ['!@#$%^&*()'];
-var finalArray = [''];
+var finalArray = [];
+var password = [];
 
 // Write password to the #password input
 function writePassword() {
@@ -25,45 +26,11 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   promptUser();
   checkCriteria();
-  }
+  var criteriaChoice = finalArray[Math.floor(Math.random() * finalArray.length)] 
+  password.push(criteriaChoice);
 }
 
-function checkCriteria() {
-  if(!valueLowercase && !valueUppercase && !valueNumbers && !valueSpecial){
-    alert("Invalid password criteria, please select at least one criteria.");
-    promptUser();
-  }
-  else if (valueLowercase && valueUppercase && valueNumbers && valueSpecial) {
-    const finalArray = finalArray.concat(lowArray, upperArray, numArray, specArray);
-  }
-  else if (valueLowercase && valueUppercase && valueNumbers) {
-    const finalArray = finalArray.concat(lowArray, upperArray, numArray);
-  }
-  else if (valueLowercase && valueUppercase && valueSpecial) {
-    const finalArray = finalArray.concat(lowArray, upperArray, specArray);
-  }
-  else if (valueUppercase && valueNumbers && valueSpecial) {
-    const finalArray = finalArray.concat(upperArray, numArray, specArray);
-  }
-  else if (valueLowercase && valueUppercase) {
-    const finalArray = finalArray.concat(lowArray, upperArray);
-  }
-  else if (valueLowercase && valueNumbers) {
-    const finalArray = finalArray.concat(lowArray, numArray);
-  }
-  else if (valueLowercase && valueSpecial) {
-    const finalArray = finalArray.concat(lowArray, specArray);
-  }
-  else if (valueUppercase && valueNumbers) {
-    const finalArray = finalArray.concat(upperArray, numArray);
-  }
-  else if (valueUppercase && valueSpecial) {
-    const finalArray = finalArray.concat(upperArray, specArray);
-  }
-  else if (valueNumbers && valueSpecial) {
-    const finalArray = finalArray.concat(numArray, specArray);
-  }
-}
+
 
 function promptUser() {
   pwdLength();
@@ -91,4 +58,41 @@ function pwdNumeric() {
 
 function pwdSpecial() {
   valueSpecial = confirm("Special chars?");
+}
+
+function checkCriteria() {
+  if(!valueLowercase && !valueUppercase && !valueNumbers && !valueSpecial){
+    alert("Invalid password criteria, please select at least one criteria.");
+    promptUser();
+  }
+  else if (valueLowercase && valueUppercase && valueNumbers && valueSpecial) {
+     finalArray = finalArray.concat(lowArray, upperArray, numArray, specArray);
+  }
+  else if (valueLowercase && valueUppercase && valueNumbers) {
+     finalArray = finalArray.concat(lowArray, upperArray, numArray);
+  }
+  else if (valueLowercase && valueUppercase && valueSpecial) {
+     finalArray = finalArray.concat(lowArray, upperArray, specArray);
+  }
+  else if (valueUppercase && valueNumbers && valueSpecial) {
+     finalArray = finalArray.concat(upperArray, numArray, specArray);
+  }
+  else if (valueLowercase && valueUppercase) {
+     finalArray = finalArray.concat(lowArray, upperArray);
+  }
+  else if (valueLowercase && valueNumbers) {
+     finalArray = finalArray.concat(lowArray, numArray);
+  }
+  else if (valueLowercase && valueSpecial) {
+     finalArray = finalArray.concat(lowArray, specArray);
+  }
+  else if (valueUppercase && valueNumbers) {
+     finalArray = finalArray.concat(upperArray, numArray);
+  }
+  else if (valueUppercase && valueSpecial) {
+     finalArray = finalArray.concat(upperArray, specArray);
+  }
+  else if (valueNumbers && valueSpecial) {
+     finalArray = finalArray.concat(numArray, specArray);
+  }
 }
