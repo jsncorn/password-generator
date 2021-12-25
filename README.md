@@ -1,6 +1,8 @@
 # Password Generator using Javascript
 
-This is a random password generator. It will prompt a user 5 times with the intent of asking for certain criterias, then creating a randomly generated string using the given criteria. 
+This is a random password generator. On button click, it will prompt a user 5 times with the intent of asking for certain criterias, then creating a randomly generated string using the given criteria. After generating the string, it will then print it out for the user to see. Demo GIF is sped up 2x.
+
+![Demo GIF](https://github.com/jsncorn/password-generator/blob/main/photos/demo.gif)
 
 ## Built With
 
