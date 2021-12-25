@@ -25,8 +25,10 @@ generateBtn.addEventListener("click", writePassword);
 function generatePassword() {
   promptUser();
   checkCriteria();
+  for (var i = 0; i < valueLength; i++) {
   var criteriaChoice = finalArray[Math.floor(Math.random() * finalArray.length)]
   password.push(criteriaChoice);
+}
 }
 
 function checkCriteria() {
