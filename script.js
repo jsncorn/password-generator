@@ -1,6 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//array for each criteria
+var lowArray = ['abcdefghijklmnopqrstuvwxyz'];
+var upperArray = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+var numArray = ['1234567890'];
+var specArray = ['!@#$%^&*()'];
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
